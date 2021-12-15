@@ -14,10 +14,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<String> productBuys = new ArrayList<>();
-    TextView tv1;
-    TextView tv2;
-    TextView tv3;
+    private List<String> productBuys;
+    private TextView tv1;
+    private TextView tv2;
+    private TextView tv3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         tv1 = findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
         tv3 = findViewById(R.id.tv3);
+
+        productBuys = new ArrayList<>();
 
         productBuys.add("9999");
         productBuys.add("9999");
