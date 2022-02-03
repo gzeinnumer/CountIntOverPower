@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 sum = Math.round(subtotal1 + sum);
             }
         }
-        tv1.setText(saparator(String.valueOf(sum)));
-        tv2.setText(idrComma(String.valueOf(sum)));
-        tv3.setText(idr(String.valueOf(sum)));
+        tv1.setText(saparator(String.valueOf(sum))); // 899.909.910.009
+        tv2.setText(idrComma(String.valueOf(sum)));  // 899.909.910.009,00
+        tv3.setText(idr(String.valueOf(sum)));       // Rp 899.909.910.009
     }
 }
 ```
