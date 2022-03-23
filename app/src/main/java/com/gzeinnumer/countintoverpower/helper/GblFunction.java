@@ -6,7 +6,7 @@ import java.util.Locale;
 public class GblFunction {
 
     public static String saparator(String value) {
-        if (value == null || value.equals("")) {
+        if (value == null || value.equals("") || value.equals("0") || value.equals("0.0") ) {
             return "0";
         }
         value = idrComma(value);
@@ -14,7 +14,7 @@ public class GblFunction {
     }
 
     public static String idrComma(String value) {
-        if (value == null || value.equals("")) {
+        if (value == null || value.equals("") || value.equals("0") || value.equals("0.0")) {
             return "0";
         } else {
             Locale localeID = new Locale("in", "ID");
