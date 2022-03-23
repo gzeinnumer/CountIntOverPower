@@ -7,6 +7,9 @@ public class GblFunction {
         if (value == null || value.equals("") || value.equals("0") || value.equals("0.0")) {
             return "0";
         }
+        if (value.contains(",")){
+            value = value.substring(0, value.indexOf(","));
+        }
         value = idrComma(value);
         return value.substring(0, value.indexOf(","));
     }
@@ -15,6 +18,9 @@ public class GblFunction {
         if (value == null || value.equals("") || value.equals("0") || value.equals("0.0")) {
             return "0";
         } else {
+            if (value.contains(",")){
+                value = value.substring(0, value.indexOf(","));
+            }
             Locale localeID = new Locale("in", "ID");
             NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
             return formatRupiah.format(Double.valueOf(value)).replace("Rp", "");
@@ -71,9 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 sum = Math.round(subtotal1 + sum);
             }
         }
-        tv1.setText(saparator(String.valueOf(sum))); // 899.909.910.009
-        tv2.setText(idrComma(String.valueOf(sum)));  // 899.909.910.009,00
-        tv3.setText(idr(String.valueOf(sum)));       // Rp 899.909.910.009
+
+        tv1.setText(saparator(String.valueOf(sum))); // 8.99909910009E11    = 899.909.910.009
+        tv2.setText(idrComma(String.valueOf(sum)));  // 8.99909910009E11    = 899.909.910.009,00
+        tv3.setText(idr(String.valueOf(sum)));       // 8.99909910009E11    = Rp 899.909.910.009
     }
 }
 ```

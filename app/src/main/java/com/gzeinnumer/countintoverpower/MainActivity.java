@@ -7,6 +7,7 @@ import static com.gzeinnumer.countintoverpower.helper.GblFunction.saparator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -55,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 sum = Math.round(subtotal1 + sum);
             }
         }
-        tv1.setText(saparator(String.valueOf(sum)));
-        tv2.setText(idrComma(String.valueOf(sum)));
-        tv3.setText(idr(String.valueOf(sum)));
+        tv1.setText(saparator(String.valueOf(sum))); // 8.99909910009E11    = 899.909.910.009
+        tv2.setText(idrComma(String.valueOf(sum)));  // 8.99909910009E11    = 899.909.910.009,00
+        tv3.setText(idr(String.valueOf(sum)));       // 8.99909910009E11    = Rp 899.909.910.009
     }
 }

@@ -9,6 +9,9 @@ public class GblFunction {
         if (value == null || value.equals("") || value.equals("0") || value.equals("0.0") ) {
             return "0";
         }
+        if (value.contains(",")){
+            value = value.substring(0, value.indexOf(","));
+        }
         value = idrComma(value);
         return value.substring(0, value.indexOf(","));
     }
@@ -17,6 +20,9 @@ public class GblFunction {
         if (value == null || value.equals("") || value.equals("0") || value.equals("0.0")) {
             return "0";
         } else {
+            if (value.contains(",")){
+                value = value.substring(0, value.indexOf(","));
+            }
             Locale localeID = new Locale("in", "ID");
             NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
             return formatRupiah.format(Double.valueOf(value)).replace("Rp", "");
